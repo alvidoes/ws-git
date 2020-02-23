@@ -1,0 +1,54 @@
+<div id="box" style="width: 300px; height: 300px; background-color: red;">
+</div>
+<br />
+<div>
+    pilihan warna box :
+    <select id="color-list">
+        <option value="red" checked>Red</option>
+        <option value="green" checked>Green</option>
+        <option value="blue" checked>Blue</option>
+        <option value="yellow" checked>Yellow</option>
+        <option value="gray" checked>Gray</option>
+    </select>
+</div>
+
+<div>
+    Tampilan box :
+    <select id="box-show">
+        <option value="block" checked>Block</option>
+        <option value="none" checked>None</option>
+        </option>
+    </select>
+</div>
+
+<div>
+    Ukuran box:
+    <select id="box-size">
+        <option value="200">200</option>
+        <option value="400">400</option>
+    </select>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+
+<script>
+     $(document).ready(function(){
+        var box = $("#box");
+        var sizeList = $("#box-size")
+        var colorList = $("#color-list");
+        var boxShow = $("#box-show");
+        // event listener color list
+        colorList.on('change', function(eventselect){
+            box.css('backgroundColor', eventselect.target.value);
+        });
+
+        // event listener size list
+        sizeList.on('change', function(eventselect){
+            box.css('width',eventselect.target.value);
+        });
+
+        boxShow.on('change', function(eventSelect){
+            box.css('display', eventSelect.target.value);
+        });
+    });
+</script>
